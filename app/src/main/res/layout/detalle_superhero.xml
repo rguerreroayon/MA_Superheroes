@@ -18,7 +18,7 @@
             android:text="Nombre Superhero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/campo_nombreS"
+            android:id="@+id/campo_nombre"
             android:textSize="26sp"
             android:layout_gravity="center"
 

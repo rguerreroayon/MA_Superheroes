@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import kotlinx.android.synthetic.main.detalle_superhero.view.*
 import kotlinx.android.synthetic.main.view_heroe.view.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         crearSuperhero()
+        var adaptador = AdaptadorSH(this, listaSuperhero)
+        listaSuperhero.adapter = adaptador
     }
 
 
@@ -70,8 +73,15 @@ class MainActivity : AppCompatActivity() {
 
 
             vista.setOnClickListener() {
+                val intent = Intent(context, DetalleSuperhero::class.java)
+                intent.putExtra("nombre", vista.campo_nombre.toString())
+                intent.putExtra("telefono", vista.campo_telefono.toString())
+                intent.putExtra("correo", vista.campo_correo.toString())
+                intent.putExtra("ciudad", vista.campo_ciudad.toString())
+                intent.putExtra("imagen", vista.imagenSuperheroe.id)
 
 
+                (context as Activity).startActivityForResult(intent, 123)
 
             }
 

@@ -11,10 +11,10 @@ class DetalleSuperhero : AppCompatActivity() {
         setContentView(R.layout.detalle_superhero)
 
         val nombreHero:String = intent.getStringExtra("nombre")
-        val telefonoHero:String = intent.getStringExtra("descripcion")
+        val telefonoHero:String = intent.getStringExtra("telefono")
         val ciudadHero:String = intent.getStringExtra("ciudad")
         val correo: String = intent.getStringExtra("correo")
-        val imagen:Int = intent.getIntExtra("image", imagenSuperheroe.id)
+        val imagen:Int = intent.getIntExtra("imagen", imagenSuperheroe.id)
 
         var bundle = intent.extras
         var nombre: String = bundle.getString("nombre   ")
